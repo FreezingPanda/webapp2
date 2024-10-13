@@ -55,6 +55,18 @@ columns[0].subheader("[GameJolt]()")
 columns[1].subheader("[GitHub](https://github.com/FreezingPanda)")
 columns[2].subheader("[lastfm](https://www.last.fm/user/FreezingPanda)")
 columns[3].subheader("[guns.lol](https://guns.lol/freezingpanda)")
+ # Open the file in binary mode and read its contents
+file_path = "turret_game_windows.zip"
+with open(file_path, "rb") as file:
+    file_data = file.read()
+
+st.download_button(
+    label="Turret Game Offline",
+    data=file_data,
+    file_name="turret_game_windows.zip",
+    mime="application/zip"
+)
+
 
 # What I Use Section
 st.write("---")
@@ -71,10 +83,8 @@ with description_column:
         For game development, I use [GameMaker](https://gamemaker.io/en), which allows me to bring my creative ideas to life.
         """
     )
+# Path to your zip file
 
-# Resume Download Section
 
 
-# Footer for final section
-st.write("---")
-st.write("### Made with ❤️ by Panda")
+# Create a download button
